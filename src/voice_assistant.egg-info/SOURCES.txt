@@ -1,0 +1,9 @@
+README.md
+setup.py
+src/voice_assistant/__init__.py
+src/voice_assistant/utils.py
+src/voice_assistant/voiceio.py
+src/voice_assistant.egg-info/PKG-INFO
+src/voice_assistant.egg-info/SOURCES.txt
+src/voice_assistant.egg-info/dependency_links.txt
+src/voice_assistant.egg-info/top_level.txt

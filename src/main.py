@@ -1,5 +1,5 @@
 
-from voiceio import VoiceIO, Pyttsx3VoiceIO, WhisperVoiceIO, CompositeVoiceIO, MockVoiceIO
+from voice_assistant.voiceio import VoiceIO, Pyttsx3VoiceIO, WhisperVoiceIO, CompositeVoiceIO, MockVoiceIO
 
 
 def command_loop(voice: VoiceIO):

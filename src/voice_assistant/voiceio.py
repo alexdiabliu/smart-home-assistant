@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from pywhispercpp.model import Model
 import pyttsx3
 
-from utils import record_audio
+from voice_assistant.utils import record_audio
 
 
 class VoiceIO(ABC):
@@ -50,7 +50,7 @@ class WhisperVoiceIO(VoiceIO):
         """
         self.model = Model(model_name, print_realtime=False, print_progress=False)
 
-    def listen(self, audio_file: str | None = None) -> str:
+    def listen(self) -> str:
         """Listen for audio input and return the transcribed text."""
         # If an audio file is provided, use it; otherwise, use the default audio file.
         path = record_audio(duration=2)
