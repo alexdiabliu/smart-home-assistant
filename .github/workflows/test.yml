@@ -21,6 +21,9 @@ jobs:
         pip install -r requirements.txt
         pip install pytest
 
+    - name: Install system dependencies
+      run: sudo apt-get update && sudo apt-get install -y portaudio19-dev
+
     - name: Set PYTHONPATH
       run: echo "PYTHONPATH=$GITHUB_WORKSPACE/src" >> $GITHUB_ENV
 
