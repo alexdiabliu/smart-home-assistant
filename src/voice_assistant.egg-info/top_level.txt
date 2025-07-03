@@ -1,1 +1,2 @@
+music_player
 voice_assistant

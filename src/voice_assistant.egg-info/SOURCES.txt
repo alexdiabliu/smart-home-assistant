@@ -1,6 +1,9 @@
 README.md
 setup.py
+src/music_player/__init__.py
+src/music_player/music_player.py
 src/voice_assistant/__init__.py
+src/voice_assistant/chatio.py
 src/voice_assistant/utils.py
 src/voice_assistant/voiceio.py
 src/voice_assistant.egg-info/PKG-INFO

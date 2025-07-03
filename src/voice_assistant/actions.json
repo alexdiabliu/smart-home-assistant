@@ -1,0 +1,13 @@
+{
+  "play_music": {
+    "description": "Play music from the user’s library or streaming service",
+    "params": ["artist", "song"]
+  },
+  "set_alarm": {
+    "description": "Set an alarm for a given time",
+    "params": ["time", "label"]
+  },
+  "other_intent": {
+    "description": "Handle other intents not covered by the above"
+  }
+}
