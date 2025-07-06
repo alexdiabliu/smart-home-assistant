@@ -2,8 +2,9 @@
 
 import sounddevice as sd, wavio, tempfile
 import json
-from music_player.music_player import play_music
+from music_player.music_player import MusicPlayer
 from voice_assistant.chatio import OllamaChatIO
+from alarm.alarm import AlarmScheduler
 
 def record_audio(duration=2, fs=16000, channels=1) -> str:
     """
@@ -18,7 +19,8 @@ def record_audio(duration=2, fs=16000, channels=1) -> str:
     wavio.write(tmp.name, data, fs, sampwidth=2)
     return tmp.name
 
-def intent_handler(instructions: dict, message: str) -> None:
+
+def intent_handler(instructions: dict, message: str) -> tuple:
     """
     Handle the intent and parameters.
     This function can be extended to perform actions based on the intent.
@@ -45,14 +47,11 @@ def intent_handler(instructions: dict, message: str) -> None:
         params = parsed.get("params", {})
         print(f"Intent: {intent}, Params: {params}")
 
-    if intent == "play_music":
-        return play_music(params=params)
-    elif intent == "other_intent":
-        chat = OllamaChatIO(model='mistral')
-        return chat.ask(messages=message, classify=False)
-    
+    return intent, params
 
-def rule_based_fallback(message: str) -> str:
+
+
+def rule_based_fallback(message: str) -> dict:
     msg = message.lower()
     if "play" in msg and "by" in msg:
         # naive parser for "play X by Y"
@@ -63,3 +62,16 @@ def rule_based_fallback(message: str) -> str:
         return {'intent':'set_alarm','params':{'time':time, 'label':""}}
     else:
         return {'intent':'other_intent'}
+
+
+def execute_intent(intent: str, params: dict, message: str) -> None:
+    """
+    Execute the intent based on the instructions.
+    This function can be extended to perform actions based on the intent.
+    """
+    if intent == "play_music":
+        music_player = MusicPlayer(artist=params.get('artist', ''), title=params.get('song', ''))
+        return music_player.play()
+    elif intent == "other_intent":
+        chat = OllamaChatIO(model='mistral')
+        return chat.ask(messages=message, classify=False)

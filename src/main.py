@@ -1,7 +1,7 @@
 
 from voice_assistant.voiceio import VoiceIO, Pyttsx3VoiceIO, WhisperVoiceIO, CompositeVoiceIO, MockVoiceIO
 from voice_assistant.chatio import OllamaChatIO
-from voice_assistant.utils import intent_handler
+from voice_assistant.utils import intent_handler, execute_intent
 
 
 def command_loop(voice: VoiceIO):
@@ -20,7 +20,8 @@ def command_loop(voice: VoiceIO):
         else:
             reply = botchat.ask(messages=text, classify=True)
             voice.speak(reply)
-            execution = intent_handler(reply, text)
+            intent, params = intent_handler(reply, text)
+            execution = execute_intent(intent=intent, params=params, message=text)
             voice.speak(execution)
 
 if __name__ == "__main__":
