@@ -22,23 +22,20 @@ def test_other_intent_fallback():
     assert result["intent"] == "other_intent"
 
 # --- Tests for intent_handler (with fake Mistral responses) ---
-def test_valid_llm_intent(capsys):
+def test_valid_llm_intent():
     json_input = '{"intent":"play_music","params":{"artist":"The Beatles", "song":"Hey Jude"}}'
     msg = "Play Hey Jude by The Beatles"
-    intent_handler(json_input, msg)
-    captured = capsys.readouterr()
-    assert "Playing music" in captured.out
+    res = intent_handler(json_input, msg)
+    assert "play_music" in res
 
-def test_invalid_json_fallback(capsys):
+def test_invalid_json_fallback():
     broken_json = '{"intent":"play_music", "params":'  # invalid
     msg = "play Believer by Imagine Dragons"
-    intent_handler(broken_json, msg)
-    captured = capsys.readouterr()
-    assert "Playing music" in captured.out
+    res = intent_handler(broken_json, msg)
+    assert "play_music" in res
 
-def test_other_intent_triggers_fallback(capsys):
+def test_other_intent_triggers_fallback():
     json_input = '{"intent":"other_intent","params":{}}'
     msg = "play Believer by Imagine Dragons"
-    intent_handler(json_input, msg)
-    captured = capsys.readouterr()
-    assert "Playing music" in captured.out
+    res = intent_handler(json_input, msg)
+    assert "play_music" in res
