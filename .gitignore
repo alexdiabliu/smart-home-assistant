@@ -1,8 +1,9 @@
 **/__pycache__/
-**/venv/
+**/.venv/
 **/Recording.mp3
 **/Recording.wav
 **/.pytest_cache/
 **/*.egg-info/
 **/sandbox.py
 **/Directories.txt
+**/sandbox/

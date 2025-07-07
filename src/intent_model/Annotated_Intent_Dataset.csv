@@ -1,0 +1,314 @@
+input_sentence,annotations
+Play something by Luis Fonsi,"{'entities': [(18, 28, 'artist')]}"
+I want to hear Shape of You,"{'entities': [(15, 27, 'song')]}"
+Put on some Bohemian Rhapsody,"{'entities': [(12, 29, 'song')]}"
+Play Despacito,"{'entities': [(5, 14, 'song')]}"
+Start playing Queen,"{'entities': [(14, 19, 'artist')]}"
+Play something by Ed Sheeran,"{'entities': [(18, 28, 'artist')]}"
+Play the song 'Let it Go' by Queen,"{'entities': [(15, 24, 'song'), (29, 34, 'artist')]}"
+Let's hear Bohemian Rhapsody from Queen,"{'entities': [(11, 28, 'song'), (34, 39, 'artist')]}"
+Play Hey Jude by The Beatles,"{'entities': [(5, 12, 'song'), (17, 27, 'artist')]}"
+Put on some Despacito,"{'entities': [(12, 21, 'song')]}"
+Let's hear Shape of You from Luis Fonsi,"{'entities': [(11, 23, 'song'), (29, 39, 'artist')]}"
+Let's hear Let it Go from Ed Sheeran,"{'entities': [(11, 20, 'song'), (26, 36, 'artist')]}"
+Play Let it Go,"{'entities': [(5, 14, 'song')]}"
+Play something by Ed Sheeran,"{'entities': [(18, 28, 'artist')]}"
+I want to hear Shape of You,"{'entities': [(15, 27, 'song')]}"
+Put on some Shape of You,"{'entities': [(12, 24, 'song')]}"
+Play Shape of You,"{'entities': [(5, 17, 'song')]}"
+Play the song 'Despacito' by Luis Fonsi,"{'entities': [(15, 24, 'song'), (29, 39, 'artist')]}"
+Play something by Ed Sheeran,"{'entities': [(18, 28, 'artist')]}"
+Let's hear Despacito from Ed Sheeran,"{'entities': [(11, 20, 'song'), (26, 36, 'artist')]}"
+Play Let it Go,"{'entities': [(5, 14, 'song')]}"
+Play Let it Go,"{'entities': [(5, 14, 'song')]}"
+Play Shape of You,"{'entities': [(5, 17, 'song')]}"
+Start playing Queen,"{'entities': [(14, 19, 'artist')]}"
+Start playing Luis Fonsi,"{'entities': [(14, 24, 'artist')]}"
+Play something by Queen,"{'entities': [(18, 23, 'artist')]}"
+Play Shape of You,"{'entities': [(5, 17, 'song')]}"
+I want to hear Shape of You,"{'entities': [(15, 27, 'song')]}"
+Make it 10%,"{'entities': [(8, 11, 'percent_of_total')]}"
+Volume mute,"{'entities': [(7, 11, 'percent_of_total')]}"
+Volume maximum,"{'entities': [(7, 14, 'percent_of_total')]}"
+Set volume to maximum,"{'entities': [(14, 21, 'percent_of_total')]}"
+Set volume to maximum,"{'entities': [(14, 21, 'percent_of_total')]}"
+Make it maximum,"{'entities': [(8, 15, 'percent_of_total')]}"
+Volume mute,"{'entities': [(7, 11, 'percent_of_total')]}"
+Volume 50%,"{'entities': [(7, 10, 'percent_of_total')]}"
+Make it 10%,"{'entities': [(8, 11, 'percent_of_total')]}"
+Make it maximum,"{'entities': [(8, 15, 'percent_of_total')]}"
+Set volume to maximum,"{'entities': [(14, 21, 'percent_of_total')]}"
+Volume maximum,"{'entities': [(7, 14, 'percent_of_total')]}"
+Volume 10%,"{'entities': [(7, 10, 'percent_of_total')]}"
+Make it mute,"{'entities': [(8, 12, 'percent_of_total')]}"
+Volume maximum,"{'entities': [(7, 14, 'percent_of_total')]}"
+Make it 50%,"{'entities': [(8, 11, 'percent_of_total')]}"
+Set volume to maximum,"{'entities': [(14, 21, 'percent_of_total')]}"
+Make it 50%,"{'entities': [(8, 11, 'percent_of_total')]}"
+Set volume to 50%,"{'entities': [(14, 17, 'percent_of_total')]}"
+Set volume to 100%,"{'entities': [(14, 18, 'percent_of_total')]}"
+Set an alarm for 6:30,"{'entities': [(17, 21, 'time')]}"
+Wake me up at 7:00 AM,"{'entities': [(14, 21, 'time')]}"
+Alarm at 6:30 called school,"{'entities': [(9, 13, 'time'), (21, 27, 'label')]}"
+Set an alarm for 14:00,"{'entities': [(17, 22, 'time')]}"
+Set an alarm for 7:00 AM,"{'entities': [(17, 24, 'time')]}"
+Set a daily alarm for tomorrow 5 AM labeled meeting,"{'entities': [(22, 35, 'time'), (44, 51, 'label')]}"
+Set an alarm for 7:00 AM,"{'entities': [(17, 24, 'time')]}"
+Set an alarm for 6:30,"{'entities': [(17, 21, 'time')]}"
+Set a daily alarm for 7:00 AM labeled school,"{'entities': [(22, 29, 'time'), (38, 44, 'label')]}"
+Set an alarm for tomorrow 5 AM,"{'entities': [(17, 30, 'time')]}"
+Alarm at tomorrow 5 AM called gym,"{'entities': [(9, 22, 'time'), (30, 33, 'label')]}"
+Set a daily alarm for 14:00 labeled gym,"{'entities': [(22, 27, 'time'), (36, 39, 'label')]}"
+Set a daily alarm for tomorrow 5 AM labeled gym,"{'entities': [(22, 35, 'time'), (44, 47, 'label')]}"
+Set a daily alarm for 14:00 labeled school,"{'entities': [(22, 27, 'time'), (36, 42, 'label')]}"
+Set a daily alarm for 6:30 labeled gym,"{'entities': [(22, 26, 'time'), (35, 38, 'label')]}"
+Set a daily alarm for 14:00 labeled gym,"{'entities': [(22, 27, 'time'), (36, 39, 'label')]}"
+Wake me up at 7:00 AM,"{'entities': [(14, 21, 'time')]}"
+Wake me up at 6:30,"{'entities': [(14, 18, 'time')]}"
+Wake me up at 7:00 AM,"{'entities': [(14, 21, 'time')]}"
+Alarm at 7:00 AM called meeting,"{'entities': [(9, 16, 'time'), (24, 31, 'label')]}"
+Set a daily alarm for tomorrow 5 AM labeled gym,"{'entities': [(22, 35, 'time'), (44, 47, 'label')]}"
+Set an alarm for tomorrow 5 AM,"{'entities': [(17, 30, 'time')]}"
+Wake me up at 6:30,"{'entities': [(14, 18, 'time')]}"
+Wake me up at 14:00,"{'entities': [(14, 19, 'time')]}"
+Wake me up at tomorrow 5 AM,"{'entities': [(14, 27, 'time')]}"
+Wake me up at 14:00,"{'entities': [(14, 19, 'time')]}"
+Alarm at 6:30 called gym,"{'entities': [(9, 13, 'time'), (21, 24, 'label')]}"
+Wake me up at 7:00 AM,"{'entities': [(14, 21, 'time')]}"
+Set a daily alarm for 14:00 labeled work,"{'entities': [(22, 27, 'time'), (36, 40, 'label')]}"
+Alarm at 6:30 called school,"{'entities': [(9, 13, 'time'), (21, 27, 'label')]}"
+Alarm at 7:00 AM called gym,"{'entities': [(9, 16, 'time'), (24, 27, 'label')]}"
+Alarm at tomorrow 5 AM called gym,"{'entities': [(9, 22, 'time'), (30, 33, 'label')]}"
+Set a daily alarm for 14:00 labeled meeting,"{'entities': [(22, 27, 'time'), (36, 43, 'label')]}"
+Stop the music,{'entities': []}
+Turn off the music,{'entities': []}
+Stop playing,{'entities': []}
+End the music,{'entities': []}
+Stop the music,{'entities': []}
+Turn off the music,{'entities': []}
+Stop playing,{'entities': []}
+End the music,{'entities': []}
+Stop the music,{'entities': []}
+Turn off the music,{'entities': []}
+Stop playing,{'entities': []}
+End the music,{'entities': []}
+Stop the music,{'entities': []}
+Turn off the music,{'entities': []}
+Stop playing,{'entities': []}
+End the music,{'entities': []}
+Stop the music,{'entities': []}
+Turn off the music,{'entities': []}
+Stop playing,{'entities': []}
+End the music,{'entities': []}
+Stop the music,{'entities': []}
+Turn off the music,{'entities': []}
+Stop playing,{'entities': []}
+End the music,{'entities': []}
+Stop the music,{'entities': []}
+Turn off the music,{'entities': []}
+Stop the alarm,{'entities': []}
+Turn off the alarm,{'entities': []}
+Silence it,{'entities': []}
+Make the alarm stop,{'entities': []}
+Stop the alarm,{'entities': []}
+Turn off the alarm,{'entities': []}
+Silence it,{'entities': []}
+Make the alarm stop,{'entities': []}
+Stop the alarm,{'entities': []}
+Turn off the alarm,{'entities': []}
+Silence it,{'entities': []}
+Make the alarm stop,{'entities': []}
+Stop the alarm,{'entities': []}
+Turn off the alarm,{'entities': []}
+Silence it,{'entities': []}
+Make the alarm stop,{'entities': []}
+Stop the alarm,{'entities': []}
+Turn off the alarm,{'entities': []}
+Silence it,{'entities': []}
+Make the alarm stop,{'entities': []}
+Stop the alarm,{'entities': []}
+Turn off the alarm,{'entities': []}
+Silence it,{'entities': []}
+Make the alarm stop,{'entities': []}
+Stop the alarm,{'entities': []}
+Turn off the alarm,{'entities': []}
+Silence it,{'entities': []}
+Make the alarm stop,{'entities': []}
+Stop the alarm,{'entities': []}
+Turn off the alarm,{'entities': []}
+Silence it,{'entities': []}
+Make the alarm stop,{'entities': []}
+Cancel all alarms,{'entities': []}
+Remove the alarm set at tomorrow,"{'entities': [(24, 32, 'time')]}"
+Cancel the alarm called gym,"{'entities': [(24, 27, 'label')]}"
+Cancel all alarms,{'entities': []}
+Remove the alarm set at Monday,"{'entities': [(24, 30, 'time')]}"
+Remove the alarm set at 7:30,"{'entities': [(24, 28, 'time')]}"
+Cancel all alarms,{'entities': []}
+Cancel the alarm called gym,"{'entities': [(24, 27, 'label')]}"
+Remove the alarm set at 7:30,"{'entities': [(24, 28, 'time')]}"
+Remove the alarm set at 6 AM,"{'entities': [(24, 28, 'time')]}"
+Cancel the alarm called gym,"{'entities': [(24, 27, 'label')]}"
+Cancel the alarm called gym,"{'entities': [(24, 27, 'label')]}"
+Cancel my alarm for 6 AM,"{'entities': [(20, 24, 'time')]}"
+Cancel the alarm called work,"{'entities': [(24, 28, 'label')]}"
+Cancel my alarm for Monday,"{'entities': [(20, 26, 'time')]}"
+Cancel my alarm for 6 AM,"{'entities': [(20, 24, 'time')]}"
+Cancel all alarms,{'entities': []}
+Cancel the alarm called work,"{'entities': [(24, 28, 'label')]}"
+Cancel the alarm called work,"{'entities': [(24, 28, 'label')]}"
+Cancel the alarm called gym,"{'entities': [(24, 27, 'label')]}"
+Cancel all alarms,{'entities': []}
+Cancel the alarm called gym,"{'entities': [(24, 27, 'label')]}"
+Remove the alarm set at 6 AM,"{'entities': [(24, 28, 'time')]}"
+Cancel my alarm for 6 AM,"{'entities': [(20, 24, 'time')]}"
+Remove the alarm set at 6 AM,"{'entities': [(24, 28, 'time')]}"
+Remove the alarm set at 7:30,"{'entities': [(24, 28, 'time')]}"
+Cancel my alarm for 7:30,"{'entities': [(20, 24, 'time')]}"
+Remove the alarm set at 6 AM,"{'entities': [(24, 28, 'time')]}"
+Cancel the alarm called school,"{'entities': [(24, 30, 'label')]}"
+Cancel all alarms,{'entities': []}
+What alarms do I have?,{'entities': []}
+When's my next alarm?,{'entities': []}
+List all alarms,{'entities': []}
+Do I have any alarms set?,{'entities': []}
+What alarms do I have?,{'entities': []}
+When's my next alarm?,{'entities': []}
+List all alarms,{'entities': []}
+Do I have any alarms set?,{'entities': []}
+What alarms do I have?,{'entities': []}
+When's my next alarm?,{'entities': []}
+List all alarms,{'entities': []}
+Do I have any alarms set?,{'entities': []}
+What alarms do I have?,{'entities': []}
+When's my next alarm?,{'entities': []}
+List all alarms,{'entities': []}
+Do I have any alarms set?,{'entities': []}
+What alarms do I have?,{'entities': []}
+When's my next alarm?,{'entities': []}
+List all alarms,{'entities': []}
+Do I have any alarms set?,{'entities': []}
+What alarms do I have?,{'entities': []}
+When's my next alarm?,{'entities': []}
+List all alarms,{'entities': []}
+Do I have any alarms set?,{'entities': []}
+What alarms do I have?,{'entities': []}
+When's my next alarm?,{'entities': []}
+List all alarms,{'entities': []}
+Do I have any alarms set?,{'entities': []}
+What alarms do I have?,{'entities': []}
+When's my next alarm?,{'entities': []}
+List all alarms,{'entities': []}
+Do I have any alarms set?,{'entities': []}
+What alarms do I have?,{'entities': []}
+When's my next alarm?,{'entities': []}
+List all alarms,{'entities': []}
+Do I have any alarms set?,{'entities': []}
+What alarms do I have?,{'entities': []}
+Pause the music,{'entities': []}
+Hold the song,{'entities': []}
+Pause this track,{'entities': []}
+Put the music on hold,{'entities': []}
+Pause the music,{'entities': []}
+Hold the song,{'entities': []}
+Pause this track,{'entities': []}
+Put the music on hold,{'entities': []}
+Pause the music,{'entities': []}
+Hold the song,{'entities': []}
+Pause this track,{'entities': []}
+Put the music on hold,{'entities': []}
+Pause the music,{'entities': []}
+Hold the song,{'entities': []}
+Pause this track,{'entities': []}
+Put the music on hold,{'entities': []}
+Pause the music,{'entities': []}
+Hold the song,{'entities': []}
+Pause this track,{'entities': []}
+Put the music on hold,{'entities': []}
+Pause the music,{'entities': []}
+Hold the song,{'entities': []}
+Pause this track,{'entities': []}
+Put the music on hold,{'entities': []}
+Pause the music,{'entities': []}
+Hold the song,{'entities': []}
+Pause this track,{'entities': []}
+Put the music on hold,{'entities': []}
+Pause the music,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+Continue the song,{'entities': []}
+Play again,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+Continue the song,{'entities': []}
+Play again,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+Continue the song,{'entities': []}
+Play again,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+Continue the song,{'entities': []}
+Play again,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+Continue the song,{'entities': []}
+Play again,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+Continue the song,{'entities': []}
+Play again,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+Continue the song,{'entities': []}
+Play again,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+Continue the song,{'entities': []}
+Play again,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+Continue the song,{'entities': []}
+Play again,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+Continue the song,{'entities': []}
+Play again,{'entities': []}
+Resume music,{'entities': []}
+Keep playing,{'entities': []}
+What time is it?,"{'entities': [(0, 16, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+What's the weather today?,"{'entities': [(0, 25, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+Tell me a joke,"{'entities': [(0, 14, 'original_message')]}"
+What's the weather today?,"{'entities': [(0, 25, 'original_message')]}"
+What time is it?,"{'entities': [(0, 16, 'original_message')]}"
+What time is it?,"{'entities': [(0, 16, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+Tell me a joke,"{'entities': [(0, 14, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+What time is it?,"{'entities': [(0, 16, 'original_message')]}"
+What's the weather today?,"{'entities': [(0, 25, 'original_message')]}"
+Tell me a joke,"{'entities': [(0, 14, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+Tell me a joke,"{'entities': [(0, 14, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+What's the weather today?,"{'entities': [(0, 25, 'original_message')]}"
+What time is it?,"{'entities': [(0, 16, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+What time is it?,"{'entities': [(0, 16, 'original_message')]}"
+What's the weather today?,"{'entities': [(0, 25, 'original_message')]}"
+Tell me a joke,"{'entities': [(0, 14, 'original_message')]}"
+Tell me a joke,"{'entities': [(0, 14, 'original_message')]}"
+Tell me a joke,"{'entities': [(0, 14, 'original_message')]}"
+What's the weather today?,"{'entities': [(0, 25, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"
+What's the weather today?,"{'entities': [(0, 25, 'original_message')]}"
+What's the weather today?,"{'entities': [(0, 25, 'original_message')]}"
+Tell me a joke,"{'entities': [(0, 14, 'original_message')]}"
+Tell me a joke,"{'entities': [(0, 14, 'original_message')]}"
+What's the weather today?,"{'entities': [(0, 25, 'original_message')]}"
+Open the door,"{'entities': [(0, 13, 'original_message')]}"

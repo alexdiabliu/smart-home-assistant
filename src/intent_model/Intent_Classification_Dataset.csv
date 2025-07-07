@@ -1,0 +1,395 @@
+intent,example
+play_music,Play something by Adele
+play_music,I want to hear Shape of You
+play_music,Play the song 'Let it Go' by Adele
+play_music,Put on some romantic tunes
+play_music,Can you play classical music?
+play_music,Put on some sad tunes
+play_music,Play latest hits
+play_music,Can you play classical music?
+play_music,Play a song
+play_music,Play the song 'Shape of You' by Queen
+play_music,Play Let it Go
+play_music,Can you play classical music?
+play_music,Play Bohemian Rhapsody
+play_music,Play my workout playlist
+play_music,Play music
+play_music,Play the song 'Let it Go' by Adele
+play_music,Can you play classical music?
+play_music,Play the song 'Let it Go' by Ed Sheeran
+play_music,Put on some sad tunes
+play_music,Play music
+play_music,Can you play pop music?
+play_music,Play something by Ed Sheeran
+play_music,Play a song
+play_music,Can you play rock music?
+play_music,Play the song 'Despacito' by Queen
+play_music,Play my workout playlist
+play_music,Play the song 'Despacito' by Queen
+play_music,Play something by Queen
+play_music,Play latest hits
+play_music,I want to hear Shape of You
+set_alarm,Alarm at 7:00 AM
+set_alarm,Set an alarm for 14:00
+set_alarm,Wake me up at 14:00
+set_alarm,Wake me up at 7:00 AM
+set_alarm,Set a daily alarm for tomorrow 5 AM
+set_alarm,Alarm at 6:30
+set_alarm,Set an alarm in 30 minutes
+set_alarm,Create an alarm at tomorrow 5 AM
+set_alarm,Schedule alarm at 6:30
+set_alarm,Set an alarm in 30 minutes
+set_alarm,Create an alarm at tomorrow 5 AM
+set_alarm,Set an alarm for 14:00
+set_alarm,Set an alarm for 6:30
+set_alarm,Set a daily alarm for 6:30
+set_alarm,Set a daily alarm for tomorrow 5 AM
+set_alarm,Wake me up at 14:00
+set_alarm,Set an alarm in 30 minutes
+set_alarm,Alarm at 7:00 AM
+set_alarm,Create an alarm at 6:30
+set_alarm,Set a daily alarm for 6:30
+set_alarm,Alarm at 6:30
+set_alarm,Alarm at tomorrow 5 AM
+set_alarm,Set an alarm in 30 minutes
+set_alarm,Create an alarm at 6:30
+set_alarm,Create an alarm at 14:00
+set_alarm,Set a daily alarm for tomorrow 5 AM
+set_alarm,Create an alarm at 14:00
+set_alarm,Remind me to wake up at 7:00 AM
+set_alarm,Alarm at tomorrow 5 AM
+set_alarm,Remind me to wake up at 7:00 AM
+set_alarm,Wake me up at 7:00 AM
+set_alarm,Schedule alarm at 7:00 AM
+set_alarm,Set an alarm for 7:00 AM
+set_alarm,Remind me to wake up at 7:00 AM
+set_alarm,Alarm at 7:00 AM
+set_alarm,Alarm at 6:30
+set_alarm,Set an alarm in 1.5 hours
+set_alarm,Wake me up at 14:00
+set_alarm,Create an alarm at 7:00 AM
+set_alarm,Set a daily alarm for 6:30
+set_alarm,Create an alarm at tomorrow 5 AM
+set_alarm,Alarm at tomorrow 5 AM
+set_alarm,Set a daily alarm for 6:30
+set_alarm,Set an alarm in 30 minutes
+set_alarm,Remind me to wake up at 14:00
+stop_music,Stop the music
+stop_music,Turn off the music
+stop_music,Stop playing
+stop_music,End the music
+stop_music,Cut the music
+stop_music,Stop everything
+stop_music,Enough music
+stop_music,Music off
+stop_music,Stop the music
+stop_music,Turn off the music
+stop_music,Stop playing
+stop_music,End the music
+stop_music,Cut the music
+stop_music,Stop everything
+stop_music,Enough music
+stop_music,Music off
+stop_music,Stop the music
+stop_music,Turn off the music
+stop_music,Stop playing
+stop_music,End the music
+stop_music,Cut the music
+stop_music,Stop everything
+stop_music,Enough music
+stop_music,Music off
+stop_music,Stop the music
+stop_music,Turn off the music
+stop_music,Stop playing
+stop_music,End the music
+stop_music,Cut the music
+stop_music,Stop everything
+stop_music,Enough music
+stop_music,Music off
+stop_music,Stop the music
+stop_music,Turn off the music
+stop_music,Stop playing
+pause_music,Pause the music
+pause_music,Hold the song
+pause_music,Pause this track
+pause_music,Put the music on hold
+pause_music,Pause now
+pause_music,Stop playing temporarily
+pause_music,Can you pause?
+pause_music,Take a break from the music
+pause_music,Pause the music
+pause_music,Hold the song
+pause_music,Pause this track
+pause_music,Put the music on hold
+pause_music,Pause now
+pause_music,Stop playing temporarily
+pause_music,Can you pause?
+pause_music,Take a break from the music
+pause_music,Pause the music
+pause_music,Hold the song
+pause_music,Pause this track
+pause_music,Put the music on hold
+pause_music,Pause now
+pause_music,Stop playing temporarily
+pause_music,Can you pause?
+pause_music,Take a break from the music
+pause_music,Pause the music
+pause_music,Hold the song
+pause_music,Pause this track
+pause_music,Put the music on hold
+pause_music,Pause now
+pause_music,Stop playing temporarily
+pause_music,Can you pause?
+pause_music,Take a break from the music
+pause_music,Pause the music
+pause_music,Hold the song
+pause_music,Pause this track
+pause_music,Put the music on hold
+pause_music,Pause now
+pause_music,Stop playing temporarily
+pause_music,Can you pause?
+pause_music,Take a break from the music
+pause_music,Pause the music
+pause_music,Hold the song
+resume_music,Resume music
+resume_music,Keep playing
+resume_music,Continue the song
+resume_music,Play again
+resume_music,Unpause the music
+resume_music,Resume playback
+resume_music,Back to music
+resume_music,Start playing again
+resume_music,Resume music
+resume_music,Keep playing
+resume_music,Continue the song
+resume_music,Play again
+resume_music,Unpause the music
+resume_music,Resume playback
+resume_music,Back to music
+resume_music,Start playing again
+resume_music,Resume music
+resume_music,Keep playing
+resume_music,Continue the song
+resume_music,Play again
+resume_music,Unpause the music
+resume_music,Resume playback
+resume_music,Back to music
+adjust_volume,Lower the sound
+adjust_volume,Make it quieter
+adjust_volume,Volume up
+adjust_volume,Set volume to 100
+adjust_volume,Lower the sound
+adjust_volume,Volume up
+adjust_volume,Raise the volume to 100
+adjust_volume,down the volume
+adjust_volume,Volume up
+adjust_volume,Can you make it louder?
+adjust_volume,Can you make it louder?
+adjust_volume,up the volume
+adjust_volume,Turn the volume up
+adjust_volume,Make it loud
+adjust_volume,Make it louder
+adjust_volume,Set volume to mute
+adjust_volume,Can you make it quieter?
+adjust_volume,Can you make it louder?
+adjust_volume,Set volume to maximum
+adjust_volume,Can you make it loud?
+adjust_volume,Make it loud
+adjust_volume,up the volume
+adjust_volume,down the volume
+adjust_volume,down the volume
+adjust_volume,Turn the volume up
+adjust_volume,Volume down
+adjust_volume,Volume up
+adjust_volume,down the volume
+adjust_volume,Lower the sound
+adjust_volume,Lower the sound
+adjust_volume,up the volume
+adjust_volume,Turn the volume down
+adjust_volume,up the volume
+adjust_volume,Raise the volume to 100
+adjust_volume,up the volume
+adjust_volume,Make it soft
+adjust_volume,up the volume
+adjust_volume,Turn the volume up
+adjust_volume,Turn the volume down
+adjust_volume,Raise the volume to 10
+adjust_volume,Volume up
+adjust_volume,Lower the sound
+adjust_volume,Volume up
+adjust_volume,Set volume to mute
+adjust_volume,Can you make it quieter?
+adjust_volume,Make it soft
+adjust_volume,Raise the volume to mute
+adjust_volume,Raise the volume to 10
+stop_alarm,Stop the alarm
+stop_alarm,Turn off the alarm
+stop_alarm,Silence it
+stop_alarm,Make the alarm stop
+stop_alarm,Alarm off
+stop_alarm,"I hear the alarm, stop it"
+stop_alarm,Please stop the ringing
+stop_alarm,Cancel the current alarm
+stop_alarm,Stop the alarm
+stop_alarm,Turn off the alarm
+stop_alarm,Silence it
+stop_alarm,Make the alarm stop
+stop_alarm,Alarm off
+stop_alarm,"I hear the alarm, stop it"
+stop_alarm,Please stop the ringing
+stop_alarm,Cancel the current alarm
+stop_alarm,Stop the alarm
+stop_alarm,Turn off the studying alarm
+stop_alarm,Turn off the breakfast alarm
+stop_alarm,Make the alarm stop
+stop_alarm,Alarm off
+stop_alarm,"I hear the alarm, stop it"
+stop_alarm,Please stop the ringing
+stop_alarm,Cancel the current alarm
+stop_alarm,Stop the alarm
+stop_alarm,Turn off the alarm
+stop_alarm,Silence it
+stop_alarm,Make the alarm stop
+stop_alarm,Alarm off
+stop_alarm,"I hear the alarm, stop it"
+stop_alarm,Please stop the ringing
+stop_alarm,Cancel the current alarm
+stop_alarm,Stop the alarm
+stop_alarm,Turn off the alarm
+stop_alarm,Silence it
+stop_alarm,Make the alarm stop
+stop_alarm,Alarm off
+stop_alarm,"I hear the alarm, stop it"
+stop_alarm,Please stop the ringing
+stop_alarm,Cancel the current alarm
+stop_alarm,Stop the alarm
+stop_alarm,Turn off the alarm
+stop_alarm,Silence it
+stop_alarm,Make the alarm stop
+stop_alarm,Alarm off
+stop_alarm,"I hear the alarm, stop it"
+stop_alarm,Please stop the ringing
+stop_alarm,Cancel the current alarm
+cancel_alarm,Remove the alarm set at 6 AM
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,Remove the alarm set at 6 AM
+cancel_alarm,Cancel all alarms
+cancel_alarm,Cancel all alarms
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,Delete future alarm
+cancel_alarm,Clear the schedule
+cancel_alarm,Cancel all alarms
+cancel_alarm,Cancel my alarm for tomorrow
+cancel_alarm,Cancel all alarms
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,Clear the schedule
+cancel_alarm,Cancel my alarm for tomorrow
+cancel_alarm,Don't wake me up
+cancel_alarm,Delete future alarm
+cancel_alarm,Cancel my alarm for 5 in the morning
+cancel_alarm,Cancel all alarms
+cancel_alarm,Clear the schedule
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,Cancel the studying label alarm
+cancel_alarm,Remove the alarm set at 6 AM
+cancel_alarm,Cancel my alarm for 7:30
+cancel_alarm,Forget about the meeting with friends alarm tomorrow
+cancel_alarm,No alarm tomorrow
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,No alarm tomorrow
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,Clear the schedule
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,Cancel my alarm for 7:30
+cancel_alarm,Don’t wake me up
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,Delete future alarm
+cancel_alarm,Remove the alarm set at 5 in the morning
+cancel_alarm,Remove the 6 AM alarm
+cancel_alarm,No alarm tomorrow
+cancel_alarm,Cancel all alarms
+cancel_alarm,No alarm tomorrow
+cancel_alarm,Delete future alarm
+cancel_alarm,Clear the schedule
+cancel_alarm,No alarm tomorrow
+cancel_alarm,Cancel all alarms
+cancel_alarm,Don’t wake me up
+cancel_alarm,Remove the alarm set at 6 AM
+cancel_alarm,Delete future alarm
+get_alarm_status,What alarms do I have?
+get_alarm_status,When's my next alarm?
+get_alarm_status,List all alarms
+get_alarm_status,Do I have any alarms set?
+get_alarm_status,Show active alarms
+get_alarm_status,Are there any alarms?
+get_alarm_status,Tell me my alarm schedule
+get_alarm_status,Check alarms
+get_alarm_status,What alarms do I have?
+get_alarm_status,When's my next alarm?
+get_alarm_status,List all alarms
+get_alarm_status,Do I have any alarms set?
+get_alarm_status,Show active alarms
+get_alarm_status,Are there any alarms?
+get_alarm_status,Tell me my alarm schedule
+get_alarm_status,Check alarms
+get_alarm_status,What alarms do I have?
+get_alarm_status,When's my next alarm?
+get_alarm_status,List all alarms
+get_alarm_status,Do I have any alarms set?
+get_alarm_status,Show active alarms
+get_alarm_status,Are there any alarms?
+get_alarm_status,Tell me my alarm schedule
+get_alarm_status,Check alarms
+get_alarm_status,What alarms do I have?
+get_alarm_status,When's my next alarm?
+get_alarm_status,List all alarms
+get_alarm_status,Do I have any alarms set?
+get_alarm_status,Show active alarms
+get_alarm_status,Are there any alarms?
+get_alarm_status,Tell me my alarm schedule
+get_alarm_status,Check alarms
+get_alarm_status,What alarms do I have?
+get_alarm_status,When's my next alarm?
+get_alarm_status,List all alarms
+get_alarm_status,Do I have any alarms set?
+get_alarm_status,Show active alarms
+get_alarm_status,Are there any alarms?
+get_alarm_status,Tell me my alarm schedule
+get_alarm_status,Check alarms
+get_alarm_status,What alarms do I have?
+get_alarm_status,When's my next alarm?
+other_intent,What's the weather today?
+other_intent,Tell me a joke
+other_intent,What time is it?
+other_intent,Open the door
+other_intent,Navigate to home
+other_intent,Translate hello to Spanish
+other_intent,Who won the game?
+other_intent,What's 2 + 2?
+other_intent,What's the weather today?
+other_intent,Tell me a joke
+other_intent,What time is it?
+other_intent,Open the door
+other_intent,Navigate to home
+other_intent,Translate hello to Spanish
+other_intent,Who won the game?
+other_intent,What's 2 + 2?
+other_intent,What's the weather today?
+other_intent,Tell me a joke
+other_intent,What time is it?
+other_intent,Open the door
+other_intent,Navigate to home
+other_intent,Translate hello to Spanish
+other_intent,Who won the game?
+other_intent,What's 2 + 2?
+other_intent,What's the weather today?
+other_intent,Tell me a joke
+other_intent,What time is it?
+other_intent,Open the door
+other_intent,Navigate to home
+other_intent,Translate hello to Spanish
+other_intent,Who won the game?
+other_intent,What's 2 + 2?
+other_intent,What's the weather today?

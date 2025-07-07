@@ -1,7 +1,7 @@
 
 from voice_assistant.voiceio import VoiceIO, Pyttsx3VoiceIO, WhisperVoiceIO, CompositeVoiceIO, MockVoiceIO
 from voice_assistant.chatio import OllamaChatIO
-from voice_assistant.utils import intent_handler, execute_intent
+from intent_model.intent_utils import intent_handler, execute_intent
 
 
 def command_loop(voice: VoiceIO):
@@ -14,14 +14,14 @@ def command_loop(voice: VoiceIO):
     botchat = OllamaChatIO(model='mistral')
     while True:
         text = voice.listen().lower()
-        if "exit" in text or "quit" in text:
+        if any(word in text for word in ("exit", "quit", "bye", "goodbye")):
             voice.speak("Exiting the command loop. Goodbye!")
             break
         else:
-            reply = botchat.ask(messages=text, classify=True)
-            voice.speak(reply)
-            intent, params = intent_handler(reply, text)
-            execution = execute_intent(intent=intent, params=params, message=text)
+            command_dict = intent_handler(text)
+            # reply = botchat.ask(messages=text)
+            print(command_dict)
+            execution = execute_intent(intent=command_dict["intent"], params=command_dict["params"], message=text)
             voice.speak(execution)
 
 if __name__ == "__main__":

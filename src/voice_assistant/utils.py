@@ -1,10 +1,6 @@
 
 
 import sounddevice as sd, wavio, tempfile
-import json
-from music_player.music_player import MusicPlayer
-from voice_assistant.chatio import OllamaChatIO
-from alarm.alarm import AlarmScheduler
 
 def record_audio(duration=2, fs=16000, channels=1) -> str:
     """
@@ -18,60 +14,3 @@ def record_audio(duration=2, fs=16000, channels=1) -> str:
     tmp = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
     wavio.write(tmp.name, data, fs, sampwidth=2)
     return tmp.name
-
-
-def intent_handler(instructions: dict, message: str) -> tuple:
-    """
-    Handle the intent and parameters.
-    This function can be extended to perform actions based on the intent.
-    instructions example: {"intent":"play_music","params":{"artist":"Michael Jackson", "song":"Billie Jean"}}
-    """
-    try:
-        parsed = json.loads(instructions)
-    except json.JSONDecodeError:
-        print("LLM failed to return valid JSON. Falling back to rules")
-        instructions = rule_based_fallback(message)
-        if isinstance(instructions, str):
-            parsed = json.loads(instructions)
-        else:
-            parsed = instructions
-
-    
-    intent = parsed.get("intent")
-    params = parsed.get("params", {})
-
-    if intent == "other_intent":
-        print("No intent matched, falling back to rule-based parsing")
-        parsed = rule_based_fallback(message)
-        intent = parsed.get("intent").strip()
-        params = parsed.get("params", {})
-        print(f"Intent: {intent}, Params: {params}")
-
-    return intent, params
-
-
-
-def rule_based_fallback(message: str) -> dict:
-    msg = message.lower()
-    if "play" in msg and "by" in msg:
-        # naive parser for "play X by Y"
-        song, artist = msg.split("play")[1].split("by")
-        return {'intent':'play_music','params':{'artist':artist.strip(), 'song':song.strip()}}
-    elif "set alarm" in msg:
-        time = msg.split("set alarm for")[-1].strip()
-        return {'intent':'set_alarm','params':{'time':time, 'label':""}}
-    else:
-        return {'intent':'other_intent'}
-
-
-def execute_intent(intent: str, params: dict, message: str) -> None:
-    """
-    Execute the intent based on the instructions.
-    This function can be extended to perform actions based on the intent.
-    """
-    if intent == "play_music":
-        music_player = MusicPlayer(artist=params.get('artist', ''), title=params.get('song', ''))
-        return music_player.play()
-    elif intent == "other_intent":
-        chat = OllamaChatIO(model='mistral')
-        return chat.ask(messages=message, classify=False)

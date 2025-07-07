@@ -1,0 +1,55 @@
+{
+  "play_music": {
+    "description": "Play music from the user’s library or streaming service",
+    "params": {
+      "artist": "",
+      "song": ""
+    }
+  },
+  "adjust_volume": {
+    "description": "Adjust volume to a specified percentage of total volume",
+    "params": {
+      "percent_of_total": ""
+    }
+  },
+  "set_alarm": {
+    "description": "Set an alarm for a given time with an optional label",
+    "params": {
+      "time": "",
+      "label": ""
+    }
+  },
+  "stop_music": {
+    "description": "Stop any currently playing music",
+    "params": {}
+  },
+  "stop_alarm": {
+    "description": "Stop the currently ringing alarm",
+    "params": {}
+  },
+  "cancel_alarm": {
+    "description": "Cancel a scheduled alarm based on time or label",
+    "params": {
+      "time": "",
+      "label": ""
+    }
+  },
+  "get_alarm_status": {
+    "description": "Check which alarms are currently set",
+    "params": {}
+  },
+  "pause_music": {
+    "description": "Pause currently playing music",
+    "params": {}
+  },
+  "resume_music": {
+    "description": "Resume paused music",
+    "params": {}
+  },
+  "other_intent": {
+    "description": "Handle other intents not covered by the above",
+    "params": {
+      "original_message": ""
+    }
+  }
+}
