@@ -1,5 +1,5 @@
 import pytest
-from intent_model.intent_utils import intent_handler
+from src.intent_model.intent_utils import intent_handler
 import builtins
 
 
