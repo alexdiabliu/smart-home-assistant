@@ -38,20 +38,20 @@ def intent_handler(text: str) -> dict:
     # 4. Decode the label using the label encoder
     predicted_label = encoder.inverse_transform(predicted_intent)[0]
 
-    # 5. Retrieve the parameters from the nlp model
-    doc = nlp(text)
-    for ent in doc.ents:
-        print(ent.label_, ent.text)
-
-    # 6. Check back with json params to fill it in
     with open(os.path.join(this_dir, "actions.json"), 'r') as f:
-
         data = json.load(f)
     params = copy.deepcopy(data[predicted_label]['params']) # to not change actions.json
     
-    for ent in doc.ents:
-        if ent.label_.lower() in params.keys():
-            params[ent.label_] = ent.text
+
+    if predicted_label in ("play_music", "set_alarm", "adjust_volume", "cancel_alarm"):
+        # 5. Retrieve the parameters from the nlp model
+        doc = nlp(text)
+        for ent in doc.ents:
+            print(ent.label_, ent.text)
+
+        for ent in doc.ents:
+            if ent.label_.lower() in params.keys():
+                params[ent.label_] = ent.text
 
     # 6. Return the label + params dictionary
     return {"intent": predicted_label, "params": params}
@@ -78,7 +78,7 @@ def execute_intent(intent: str, params: dict, message: str) -> None:
         return music_player.play()
     elif intent == "other_intent":
         chat = OllamaChatIO(model='mistral')
-        return chat.ask(messages=message, classify=False)
+        return chat.ask(messages=message)
 
 if __name__ == "__main__":
-    print(intent_handler("Play Hey Jude by The Beatles"))
+    print(intent_handler("i am hungry"))

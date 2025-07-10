@@ -20,7 +20,6 @@
     "ner":[
       "artist",
       "label",
-      "original_message",
       "percent_of_total",
       "song",
       "time"
