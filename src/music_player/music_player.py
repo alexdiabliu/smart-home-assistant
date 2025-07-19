@@ -24,8 +24,8 @@ class MusicPlayer:
         print(f"Checking music folder for {self.artist} - {self.title}...")
 
         for file in os.listdir('../music'):
-            print(f"Found file: {file}")
-            if (self.artist and self.title) in file:
+            # print(f"Found file: {file}")
+            if (self.artist and self.title) in file.lower():
                 print(f"Found {file}, Playing Now...")
                 # Here you would typically call a music player API or library to play the song.
                 break
