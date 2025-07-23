@@ -5,11 +5,15 @@ import spacy
 import json
 import copy
 import os
+import time
 
 import json
-from music_player.music_player import MusicPlayer
+
 from voice_assistant.chatio import OllamaChatIO
 from alarm.alarm import AlarmScheduler
+
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module='sklearn')
 
 this_dir = os.path.dirname(__file__)
 encoder = joblib.load(os.path.join(this_dir, "label_encoder.pkl"))
@@ -68,17 +72,37 @@ def preprocess_text(text):
 
 
 
-def execute_intent(intent: str, params: dict, message: str) -> None:
+def execute_intent(intent: str, params: dict, message: str, music_player = None) -> None:
     """
     Execute the intent based on the instructions.
     This function can be extended to perform actions based on the intent.
     """
     if intent == "play_music":
-        music_player = MusicPlayer(artist=params.get('artist', ''), title=params.get('song', ''))
-        return music_player.play()
+        time.sleep(1)
+        music_player.play(artist=params.get('artist', ''), title=params.get('song', ''))
+        return
+    elif intent == "pause_music":
+        if music_player:
+            music_player.pause()
+        else:
+            print("Nothing is currently playing")
+            return
+    elif intent == "stop_music":
+        if music_player:
+            music_player.stop()
+        else:
+            print("Nothing is currently playing")
+            return
+    elif intent == "resume_music":
+        if music_player:
+            music_player.resume()
+        else:
+            print("Nothing is has been paused playing")
+            return
     elif intent == "other_intent":
-        chat = OllamaChatIO(model='mistral')
-        return chat.ask(messages=message)
-
+        # chat = OllamaChatIO(model='mistral')
+        # return chat.ask(messages=message)
+        return None
+    
 if __name__ == "__main__":
     print(intent_handler("i am hungry"))

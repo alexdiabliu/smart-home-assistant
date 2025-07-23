@@ -1,47 +1,50 @@
 
 import os
-
-
+import pygame
 class MusicPlayer:
     """
     A class to represent a music player that can play songs by artist and title.
     """
 
-    def __init__(self, artist: str, title: str):
-        self.artist = artist
-        self.title = title
+    def __init__(self):
+        pygame.mixer.init()
 
-    def play(self) -> None:
+    def play(self, artist: str, title: str) -> None:
         """
-        Play the music using the specified artist and title.
+        Play the music using the specified artist and title in the background.
         """
+        music_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../music"))
+        print(f"Checking music folder for {artist} - {title}...")
 
-        params = {
-            'artist': self.artist,
-            'title': self.title
-        }
-        # checks music folder for the song
-        print(f"Checking music folder for {self.artist} - {self.title}...")
-
-        for file in os.listdir('../music'):
-            # print(f"Found file: {file}")
-            if (self.artist and self.title) in file.lower():
+        for file in os.listdir(music_dir):
+            if artist in file.lower() and title in file.lower():
+                full_path = os.path.join(music_dir, file)
                 print(f"Found {file}, Playing Now...")
-                # Here you would typically call a music player API or library to play the song.
-                break
-        else:
-            print(f"Song {self.artist} - {self.title} not found in music folder.")
-            print("Please check the artist and title, or add the song to the music folder.")
-        
+                pygame.mixer.music.load(full_path)
+                pygame.mixer.music.play()
+                return
+
+        print(f"Song {artist} - {title} not found in music folder.")
+        print("Please check the artist and title, or add the song to the music folder.")
+
 
     def pause(self) -> None:
         """
         Pause the currently playing music.
         """
-        print("Pausing music...")
+        print("Pausing Music...")
+        pygame.mixer.music.pause()
+
+    def resume(self) -> None:
+        """
+        Resume the previously paused music.
+        """
+        print("Resuming Music...")
+        pygame.mixer.music.unpause()
 
     def stop(self) -> None:
         """
-        Stop the currently playing music.
+        Stop the currently playing music entirely.
         """
-        print("Stopping music...")
+        print("Stopping Music...")
+        pygame.mixer.music.stop()

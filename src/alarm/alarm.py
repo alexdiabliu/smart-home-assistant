@@ -8,17 +8,41 @@ class Alarm:
         self.time = datetime.datetime.strptime(time_str, "%Y-%m-%d %H:%M:%S")
         self.label = label
 
+# Class responsible for interacting with the SQLite alarm database
 class AlarmScheduler:
     def __init__(self):
-        pass
+        # Connect to (or create) the database file
+        conn = sqlite3.connect("alarms.db")
+
+        # Create a cursor object
+        cursor = conn.cursor()
+
+        # Create the alarms table
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS alarms (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                time TEXT NOT NULL,
+                label TEXT,
+                triggered INTEGER DEFAULT 0
+            )
+        ''')
+
+        # Commit and close
+        conn.commit()
+        conn.close() # Always close DB connection after use
 
     def get_alarm_times(self):
         conn = sqlite3.connect("alarms.db")
         cursor = conn.cursor()
 
         cursor.execute("SELECT * FROM alarms")
-        return cursor.fetchall()
-    
+        res = cursor.fetchall()
+        
+        conn.commit() # Save changes to the DB
+        conn.close()
+        
+        return res
+
     def add_alarm(self, alarm: Alarm):
         conn = sqlite3.connect("alarms.db")
         cursor = conn.cursor()
