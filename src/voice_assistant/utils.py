@@ -2,7 +2,7 @@
 import time
 import sounddevice as sd, wavio, tempfile, scipy.signal
 
-def record_audio(duration=2, out_fs=16000, channels=1) -> str:
+def record_audio(duration=10, out_fs=16000, channels=1) -> str:
     """
     Record from the default mic at 16 kHz mono and write out a WAV
     that Whisper will accept.

@@ -4,7 +4,7 @@ from pywhispercpp.model import Model
 import pyttsx3
 
 from voice_assistant.utils import record_audio
-
+import requests
 
 class VoiceIO(ABC):
     """
@@ -15,7 +15,7 @@ class VoiceIO(ABC):
     """
 
     @abstractmethod
-    def listen(self) -> str:
+    def listen(self, duration) -> str:
         """Return recognized speech as text."""
         pass
 
@@ -30,7 +30,7 @@ class MockVoiceIO(VoiceIO):
     Mock implementation of VoiceIO for local development/testing purposes.
     """
 
-    def listen(self) -> str:
+    def listen(self, duration) -> str:
         """Simulate listening by returning a fixed string."""
         return input("Mock Listen - Type a command: ")
 
@@ -50,10 +50,10 @@ class WhisperVoiceIO(VoiceIO):
         """
         self.model = Model(model_name, print_realtime=False, print_progress=False)
 
-    def listen(self) -> str:
+    def listen(self, duration=10) -> str:
         """Listen for audio input and return the transcribed text."""
         # If an audio file is provided, use it; otherwise, use the default audio file.
-        path = record_audio(duration=2)
+        path = record_audio(duration=duration)
         
         segments = self.model.transcribe(path)
         return " ".join(segment.text for segment in segments)
@@ -61,6 +61,32 @@ class WhisperVoiceIO(VoiceIO):
     def speak(self, text: str) -> None:
         raise RuntimeError("WhisperVoiceIO is STT-only; use CompositeVoiceIO to combine STT+TTS")
 
+
+class AWSVoiceIO(VoiceIO):
+    """
+    Implementation of VoiceIO using the Whisper ASR model through AWS.
+    """
+    def __init__(self, public_ip):
+        self.public_ip = public_ip
+
+    def listen(self, duration=10) -> str:
+        """Listen for audio input and return the transcribed text."""
+        # If an audio file is provided, use it; otherwise, use the default audio file.
+        path = record_audio(duration=duration)
+        transcript = self.send_audio_for_transcription(path)
+        print(transcript)
+        return transcript
+
+    def speak(self, text: str) -> None:
+        raise RuntimeError("WhisperVoiceIO is STT-only; use CompositeVoiceIO to combine STT+TTS")
+
+
+    def send_audio_for_transcription(self, path):
+        url = f"http://{self.public_ip}:8000/transcribe"
+        with open(path, 'rb') as f:
+            files = {'file': f}
+            r = requests.post(url, files=files)
+        return r.json()["transcript"]
 
 
 class Pyttsx3VoiceIO(VoiceIO):
@@ -86,9 +112,9 @@ class CompositeVoiceIO(VoiceIO):
         self.tts = tts
         self.stt = stt
 
-    def listen(self) -> str:
+    def listen(self, duration=10) -> str:
         """Use the selected speech-to-text engine to listen for commands."""
-        return self.stt.listen()
+        return self.stt.listen(duration=duration)
 
     def speak(self, text: str) -> None:
         """Use the selected text-to-speech engine to speak the text."""

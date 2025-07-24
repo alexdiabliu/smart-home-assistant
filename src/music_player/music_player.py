@@ -34,6 +34,8 @@ class MusicPlayer:
         """
         print("Pausing Music...")
         pygame.mixer.music.pause()
+        return
+
 
     def resume(self) -> None:
         """
@@ -41,6 +43,8 @@ class MusicPlayer:
         """
         print("Resuming Music...")
         pygame.mixer.music.unpause()
+        return
+
 
     def stop(self) -> None:
         """
@@ -48,3 +52,10 @@ class MusicPlayer:
         """
         print("Stopping Music...")
         pygame.mixer.music.stop()
+        return
+
+
+    def change_volume(self, volume = 0.3) -> None:
+        print(f"Adjusting to {volume}...")
+        pygame.mixer.music.set_volume(volume)
+        return
