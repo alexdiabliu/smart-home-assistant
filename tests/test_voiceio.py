@@ -19,7 +19,7 @@ def test_mock_listen_and_speak(monkeypatch, capsys):
     mock = vi.MockVoiceIO()
 
     # 2) verify listen()
-    result = mock.listen()
+    result = mock.listen(duretion=2)
     assert result == "hello world"
 
     # 3) verify speak() prints the right prefix
@@ -34,7 +34,7 @@ def test_whisper_listen(monkeypatch):
 
     fake_segments = [SimpleNamespace(text="play"), SimpleNamespace(text="music")]
     monkeypatch.setattr(whisper.model, 'transcribe', lambda path: fake_segments)
-    transcription = whisper.listen().lower()
+    transcription = whisper.listen(duration=2).lower()
     assert "play music" in transcription
 
 
@@ -46,7 +46,7 @@ def test_composite(monkeypatch, capsys):
 
     for command in commands:
         monkeypatch.setattr(builtins, 'input', lambda prompt='': command)
-        result = comp.listen().lower()
+        result = comp.listen(duration=2).lower()
         assert command in result
     
         comp.speak(command)
