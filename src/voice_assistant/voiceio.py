@@ -32,7 +32,7 @@ class MockVoiceIO(VoiceIO):
     Mock implementation of VoiceIO for local development/testing purposes.
     """
 
-    def listen(self, duration) -> str:
+    def listen(self, duration, live) -> str:
         """Simulate listening by returning a fixed string."""
         return input("Mock Listen - Type a command: ")
 
