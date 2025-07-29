@@ -3,6 +3,8 @@ from abc import ABC, abstractmethod
 from pywhispercpp.model import Model
 import pyttsx3
 
+from voice_assistant.live_record import record_until_silence
+
 from voice_assistant.utils import record_audio
 import requests
 
@@ -69,10 +71,13 @@ class AWSVoiceIO(VoiceIO):
     def __init__(self, public_ip):
         self.public_ip = public_ip
 
-    def listen(self, duration=10) -> str:
+    def listen(self, duration=10, live=True) -> str:
         """Listen for audio input and return the transcribed text."""
         # If an audio file is provided, use it; otherwise, use the default audio file.
-        path = record_audio(duration=duration)
+        if live:
+            path = record_until_silence()
+        else:
+            path = record_audio(duration=duration)
         transcript = self.send_audio_for_transcription(path)
         print(transcript)
         return transcript
@@ -112,9 +117,9 @@ class CompositeVoiceIO(VoiceIO):
         self.tts = tts
         self.stt = stt
 
-    def listen(self, duration=10) -> str:
+    def listen(self, duration=10, live=True) -> str:
         """Use the selected speech-to-text engine to listen for commands."""
-        return self.stt.listen(duration=duration)
+        return self.stt.listen(duration=duration, live=live)
 
     def speak(self, text: str) -> None:
         """Use the selected text-to-speech engine to speak the text."""

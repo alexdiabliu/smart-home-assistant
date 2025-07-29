@@ -12,13 +12,20 @@ def command_loop(voice: VoiceIO):
     """
 
     botchat = OllamaChatIO(model='mistral')
+    music_player = MusicPlayer()
+    temp_paused = False
+
     while True:
-        music_player = MusicPlayer()
-        
         # Wake Word
-        wake_phrase = voice.listen(duration=2).lower()
+        wake_phrase = voice.listen(duration=2, live=False).lower()
         if any(keyword in wake_phrase for keyword in ["smartrise", "smart rise", "jarvis"]):
+            # pause music temporarily for better user listening
+            if music_player.is_playing:
+                temp_paused = True
+                music_player.pause()
+            
             voice.speak("Yes?")
+
 
             # full command
             text = voice.listen(duration=10).lower()
@@ -26,6 +33,10 @@ def command_loop(voice: VoiceIO):
                 voice.speak("Exiting the command loop. Goodbye!")
                 break
             else:
+                if temp_paused:
+                    music_player.resume()
+                    temp_paused = False
+
                 command_dict = intent_handler(text)
                 # reply = botchat.ask(messages=text)
                 print(command_dict)
@@ -38,7 +49,7 @@ if __name__ == "__main__":
 
     # ears = MockVoiceIO()
     # ears = WhisperVoiceIO()
-    ears = AWSVoiceIO(public_ip="35.183.23.203")
+    ears = AWSVoiceIO(public_ip="3.99.164.60")
 
     system = CompositeVoiceIO(stt=ears, tts=voice)
     command_loop(system)

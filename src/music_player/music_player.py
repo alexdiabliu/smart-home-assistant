@@ -8,6 +8,7 @@ class MusicPlayer:
 
     def __init__(self):
         pygame.mixer.init()
+        self.is_playing = False
 
     def play(self, artist: str, title: str) -> None:
         """
@@ -20,6 +21,7 @@ class MusicPlayer:
             if artist in file.lower() and title in file.lower():
                 full_path = os.path.join(music_dir, file)
                 print(f"Found {file}, Playing Now...")
+                self.is_playing = True
                 pygame.mixer.music.load(full_path)
                 pygame.mixer.music.play()
                 return
@@ -34,6 +36,7 @@ class MusicPlayer:
         """
         print("Pausing Music...")
         pygame.mixer.music.pause()
+        self.is_playing = False
         return
 
 
@@ -43,6 +46,7 @@ class MusicPlayer:
         """
         print("Resuming Music...")
         pygame.mixer.music.unpause()
+        self.is_playing = True
         return
 
 
@@ -52,6 +56,7 @@ class MusicPlayer:
         """
         print("Stopping Music...")
         pygame.mixer.music.stop()
+        self.is_playing = False
         return
 
 
