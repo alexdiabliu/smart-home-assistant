@@ -10,7 +10,7 @@ import time
 import json
 
 from voice_assistant.chatio import OllamaChatIO
-from alarm.alarm import AlarmScheduler
+from alarm.alarm import Alarm
 
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module='sklearn')
@@ -72,7 +72,7 @@ def preprocess_text(text):
 
 
 
-def execute_intent(intent: str, params: dict, message: str, music_player = None) -> None:
+def execute_intent(intent: str, params: dict, message: str, music_player = None, alarm_scheduler = None) -> None:
     """
     Execute the intent based on the instructions.
     This function can be extended to perform actions based on the intent.
@@ -99,6 +99,16 @@ def execute_intent(intent: str, params: dict, message: str, music_player = None)
         else:
             print("Nothing is has been paused playing")
             return
+    elif intent == "set_alarm":
+        alarm = Alarm(time=params.get('time', ''), label=params.get('label', ''))
+        alarm_scheduler.add_alarm(alarm)
+    elif intent == "stop_alarm":
+        alarm_scheduler.stop_alarms()
+    elif intent == "cancel_alarm":
+        alarm_scheduler.remove_alarm(time=params.get('time', ''), label=params.get('label', ''))
+    elif intent == "adjust_volume":
+        volume = params.get('volume', 0.3)
+        music_player.change_volume(volume)
     elif intent == "other_intent":
         # chat = OllamaChatIO(model='mistral')
         # return chat.ask(messages=message)

@@ -1,17 +1,19 @@
 import datetime
 import time
 import sqlite3
+import dateparser
 
 class Alarm:
-    def __init__(self, time_str, label=""):
+    def __init__(self, time, label=""):
         # Store as a datetime object, not a string
-        self.time = datetime.datetime.strptime(time_str, "%Y-%m-%d %H:%M:%S")
+        self.time = dateparser.parse(time)
         self.label = label
 
 # Class responsible for interacting with the SQLite alarm database
 class AlarmScheduler:
-    def __init__(self):
+    def __init__(self, music_player=None):
         # Connect to (or create) the database file
+        self.music_player = music_player
         conn = sqlite3.connect("alarms.db")
 
         # Create a cursor object
@@ -94,6 +96,9 @@ class AlarmScheduler:
         due_alarms = cursor.fetchall()
 
         for alarm_id, alarm_time, label in due_alarms:
+            self.music_player.pause()
+            self.music_player.change_volume(0.5)  # Set volume to max for alarm
+            self.music_player.play(artist="lofi", title="alarm")
             print(f"🔔 Alarm! {label} at {alarm_time}")
         
             # cursor.execute("UPDATE alarms SET triggered = 1 where id = ?", (alarm_id,))
@@ -102,7 +107,20 @@ class AlarmScheduler:
         conn.commit()
         conn.close()
 
-
+    def stop_alarms(self):
+        """
+        Stop all currently playing alarms.
+        """
+        conn = sqlite3.connect("alarms.db")
+        cursor = conn.cursor()
+        if self.music_player and self.music_player.is_playing:
+            self.music_player.stop()
+            print("All alarms stopped.")
+            cursor.execute("UPDATE alarms SET triggered = 1 WHERE triggered = 0")
+            conn.commit()
+            conn.close()
+        else:
+            print("No alarms are currently playing.")
 
 if __name__ == "__main__":
     # You could replace this with input(), voice command, or GUI later

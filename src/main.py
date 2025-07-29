@@ -3,6 +3,7 @@ from voice_assistant.voiceio import VoiceIO, Pyttsx3VoiceIO, WhisperVoiceIO, AWS
 from voice_assistant.chatio import OllamaChatIO
 from intent_model.intent_utils import intent_handler, execute_intent
 from music_player.music_player import MusicPlayer
+from alarm.alarm import AlarmScheduler
 
 def command_loop(voice: VoiceIO):
     """
@@ -13,9 +14,11 @@ def command_loop(voice: VoiceIO):
 
     botchat = OllamaChatIO(model='mistral')
     music_player = MusicPlayer()
+    alarm_clock = AlarmScheduler(music_player=music_player)
     temp_paused = False
 
     while True:
+        alarm_clock.check_alarms()
         # Wake Word
         wake_phrase = voice.listen(duration=2, live=False).lower()
         if any(keyword in wake_phrase for keyword in ["smartrise", "smart rise", "jarvis"]):
@@ -25,7 +28,6 @@ def command_loop(voice: VoiceIO):
                 music_player.pause()
             
             voice.speak("Yes?")
-
 
             # full command
             text = voice.listen(duration=10).lower()
@@ -40,7 +42,7 @@ def command_loop(voice: VoiceIO):
                 command_dict = intent_handler(text)
                 # reply = botchat.ask(messages=text)
                 print(command_dict)
-                execution = execute_intent(intent=command_dict["intent"], params=command_dict["params"], message=text, music_player=music_player)
+                execution = execute_intent(intent=command_dict["intent"], params=command_dict["params"], message=text, music_player=music_player, alarm_scheduler=alarm_clock)
                 voice.speak(execution)
 
 if __name__ == "__main__":
