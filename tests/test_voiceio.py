@@ -19,7 +19,7 @@ def test_mock_listen_and_speak(monkeypatch, capsys):
     mock = vi.MockVoiceIO()
 
     # 2) verify listen()
-    result = mock.listen(duration=2)
+    result = mock.listen(duration=2, live=False)
     assert result == "hello world"
 
     # 3) verify speak() prints the right prefix
