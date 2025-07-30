@@ -7,7 +7,7 @@ class MusicPlayer:
     """
 
     def __init__(self):
-        pygame.mixer.init()
+        pygame.mixer.init(buffer=512)
         self.is_playing = False
 
     def play(self, artist: str, title: str) -> None:

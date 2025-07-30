@@ -94,14 +94,15 @@ class AlarmScheduler:
         ''', (now,))
 
         due_alarms = cursor.fetchall()
+        if len(due_alarms) >= 1:
+            if self.music_player.is_playing == True:
+                self.music_player.stop()
+            self.music_player.play(artist="lofi", title="alarm")
 
         for alarm_id, alarm_time, label in due_alarms:
-            self.music_player.pause()
-            self.music_player.change_volume(0.5)  # Set volume to max for alarm
-            self.music_player.play(artist="lofi", title="alarm")
             print(f"🔔 Alarm! {label} at {alarm_time}")
         
-            # cursor.execute("UPDATE alarms SET triggered = 1 where id = ?", (alarm_id,))
+            cursor.execute("UPDATE alarms SET triggered = 1 where id = ?", (alarm_id,))
         
         # cursor.execute("DELETE FROM alarms WHERE triggered = 1")
         conn.commit()
@@ -116,7 +117,9 @@ class AlarmScheduler:
         if self.music_player and self.music_player.is_playing:
             self.music_player.stop()
             print("All alarms stopped.")
-            cursor.execute("UPDATE alarms SET triggered = 1 WHERE triggered = 0")
+            # delete alarms
+            cursor.execute("DELETE FROM alarms WHERE triggered = 1")
+            # cursor.execute("UPDATE alarms SET triggered = 1 WHERE triggered = 0")
             conn.commit()
             conn.close()
         else:

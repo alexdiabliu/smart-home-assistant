@@ -30,7 +30,7 @@ def command_loop(voice: VoiceIO):
             voice.speak("Yes?")
 
             # full command
-            text = voice.listen(duration=10).lower()
+            text = voice.listen(duration=10, live=True).lower()
             if any(word in text for word in ("exit", "quit", "bye", "goodbye")):
                 voice.speak("Exiting the command loop. Goodbye!")
                 break
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
     # ears = MockVoiceIO()
     # ears = WhisperVoiceIO()
-    ears = AWSVoiceIO(public_ip="3.99.164.60")
+    ears = AWSVoiceIO(public_ip="3.99.128.66")
 
     system = CompositeVoiceIO(stt=ears, tts=voice)
     command_loop(system)
