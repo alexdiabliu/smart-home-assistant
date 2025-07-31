@@ -2,12 +2,16 @@
 
 SmartRise is a voice-controlled, AI-enhanced alarm clock system built on a Raspberry Pi 4. It is designed to help users start and end their days intentionally without needing a phone. Through integrated voice commands, music playback, alarm scheduling, and local AI interaction, SmartRise creates a screen-free, productivity-focused experience.
 
+
 ## 📸 Demo & Documentation
 [Demo](https://drive.google.com/file/d/1xjQ_AtIRt9Aot3gjrQRl_ckbW8xgyLdE/view?usp=sharing)
+![IMG_9361](https://github.com/user-attachments/assets/cd908b34-0b94-4731-839e-b3ec3fed2ccd)
+
 
 ## 🎯 Purpose & Motivation
 
 Modern routines often start and end with distraction-heavy phone use. SmartRise was created as a healthier, distraction-free alternative: a bedside assistant that combines the best features of music, alarms, and AI chat into a single local-first system. Beyond solving a personal pain point, it also serves as a portfolio piece for roles in embedded systems, AI automation, and post-silicon validation.
+
 
 ## ⚙️ Core Components
 
