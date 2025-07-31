@@ -1,56 +1,18 @@
-# smart-assistant
-
-SmartRise: The AI-Powered Multimedia Alarm System
+# SmartRise: The AI-Powered Multimedia Alarm System
 
 SmartRise is a voice-controlled, AI-enhanced alarm clock system built on a Raspberry Pi 4. It is designed to help users start and end their days intentionally without needing a phone. Through integrated voice commands, music playback, alarm scheduling, and local AI interaction, SmartRise creates a screen-free, productivity-focused experience.
 
-📸 Demo & Documentation
+## 📸 Demo & Documentation
 
-Coming Soon: Demo video, system photos, and live GitHub Pages project site.
+Filler
 
-🎯 Purpose & Motivation
+## 🎯 Purpose & Motivation
 
 Modern routines often start and end with distraction-heavy phone use. SmartRise was created as a healthier, distraction-free alternative: a bedside assistant that combines the best features of music, alarms, and AI chat into a single local-first system. Beyond solving a personal pain point, it also serves as a portfolio piece for roles in embedded systems, AI automation, and post-silicon validation.
 
-⚙️ System Architecture
+## ⚙️ Core Components
 
-📦 Software Stack
-
-Layer
-
-Tools & Libraries
-
-OS
-
-Raspberry Pi OS (Raspbian Linux)
-
-Voice Input (STT)
-
-Microphone Module + Transcription with Whisper.cpp on AWS endpoint
-
-Voice Output (TTS)
-
-Pyttsx3 + Speaker Modules
-
-Command Parsing
-
-ML-based intent classifier + spaCy NER
-
-Alarm Scheduler
-
-Python, SQLite3, DateParser
-
-Music Playback
-
-Pygame-based MP3 player
-
-AI Chatbot
-
-Ollama with Mistral LLM locally or via API
-
-🧠 Core Components
-
-STT (Speech-to-Text): Uses Whisper on a remote AWS server to transcribe audio commands.
+STT (Speech-to-Text): Uses Whisper on a remote AWS EC2 server instance to transcribe audio commands.
 
 TTS (Text-to-Speech): Uses pyttsx3 for fully offline responses.
 
@@ -58,13 +20,14 @@ Intent Classification: Custom-trained TF-IDF + SVM model to classify commands li
 
 Parameter Extraction: spaCy NER model trained to extract artist, song, time, label, etc.
 
-Alarm System: SQLite-backed alarm manager that schedules, triggers, and logs alarms.
+Alarm System: SQLite-backed alarm manager that schedules, triggers, and logs custom alarms with Dateparser.
 
 Music Playback: Plays .mp3 files stored locally using Pygame Mixer.
 
 Chatbot: Local/offline LLM integration using Ollama for casual Q&A or fallback support.
 
-🔄 Main Command Loop (Overview)
+
+### Main Command Loop (Overview)
 
 Continuously checks the alarm database for triggered events.
 
@@ -78,49 +41,32 @@ Executes the associated function: play music, set alarm, stop alarm, etc.
 
 Responds with TTS or executes fallback AI chat if no match found.
 
-🧩 Files & Directories
 
-File / Folder
+## 🧩 Files & Directories
 
-Description
+main.py: Entry point. Controls command loop and integration.
 
-main.py
+alarm/: Alarm logic, SQLite interaction, and trigger handling.
 
-Entry point. Controls command loop and integration.
+music_player/: Music playback logic with pause/resume/stop.
 
-alarm/
+intent_model/: ML intent classifier and spaCy parameter model.
 
-Alarm logic, SQLite interaction, and trigger handling.
+voice_assistant/:  Audio input/output (STT, TTS) modules.
 
-music_player/
+live_record.py: Real-time audio recording until silence.
 
-Music playback logic with pause/resume/stop.
+utils.py:  Helper for WAV recording.
 
-intent_model/
+chatio.py: LLM interface using Ollama.
 
-ML intent classifier and spaCy parameter model.
 
-voice_assistant/
+## 👤 Developer
 
-Audio input/output (STT, TTS) modules.
+Alexander Kamil Diab-Liu
+[Portfolio](https://alexdiabliu.github.io/) | [GitHub](https://github.com/alexdiabliu) | [LinkedIn](https://www.linkedin.com/in/alexdiabliu/)
 
-live_record.py
 
-Real-time audio recording until silence.
-
-utils.py
-
-Helper for WAV recording.
-
-chatio.py
-
-LLM interface using Ollama.
-
-👤 Developer
-
-Alexander Kamil Diab-LiuPortfolio | GitHub | LinkedIn
-
-📬 Questions?
-
-Feel free to open an issue or reach out via LinkedIn or GitHub!
+## 📬 Questions?
+Feel free to open an issue or reach out via LinkedIn!
 
